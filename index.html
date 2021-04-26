@@ -35,9 +35,9 @@
         <h3 v-else-if="winner === 'monster'">You lose!</h3>
         <h3 v-else>It's a draw!</h3>
       </section>
-      <section id="controls">
+      <section id="controls" v-else>
         <button @click="playerAttack">ATTACK</button>
-        <button @click="specialAttack">SPECIAL ATTACK</button>
+        <button :disabled="mayUseSpecialAtt" @click="specialAttack">SPECIAL ATTACK</button>
         <button @click="playerHeal">HEAL</button>
         <button>SURRENDER</button>
       </section>
