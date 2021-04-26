@@ -17,7 +17,7 @@ const game = Vue.createApp({
     },
   },
 });
-game.mount("game");
+game.mount("#game");
 
 const randomValue = function (min, max) {
   Math.floor(Math.random() * (max - min)) + min;
