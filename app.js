@@ -20,6 +20,11 @@ const game = Vue.createApp({
       this.monsterHealth -= attackValue;
       this.monsterAttack();
     },
+    playerHeal() {
+      const healValue = randomValue(8, 20);
+      this.playerHealth += healValue;
+      this.monsterAttack();
+    },
   },
   computed: {
     playerHealthBar() {
