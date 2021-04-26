@@ -15,10 +15,23 @@ const game = Vue.createApp({
       const attackValue = randomValue(10, 15);
       this.playerHealth -= attackValue;
     },
+    specialAttack() {
+      const attackValue = randomValue(15, 25);
+      this.monsterHealth -= attackValue;
+      this.monsterAttack();
+    },
+  },
+  computed: {
+    playerHealthBar() {
+      return { width: this.playerHealth + "%" };
+    },
+    monsterHealthBar() {
+      return { width: this.monsterHealth + "%" };
+    },
   },
 });
 game.mount("#game");
 
 const randomValue = function (min, max) {
-  Math.floor(Math.random() * (max - min)) + min;
+  return Math.floor(Math.random() * (max - min)) + min;
 };
